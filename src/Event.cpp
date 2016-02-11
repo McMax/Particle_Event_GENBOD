@@ -8,14 +8,14 @@ Event::Event()
 {
 	fEid = 0;
 	fParticles = new TClonesArray("Particle",15);
-	fNpa = fNneu = fNneg = fNpos = 0;
+	fNpa = fNneg = fNneu = fNpos = 0;
 }
 
 Event::Event(UInt_t eid)
 {
 	fEid = eid;
 	fParticles = new TClonesArray("Particle",15);
-	fNpa = fNneu = fNneg = fNpos = 0;
+	fNpa = fNneg = fNneu = fNpos = 0;
 }
 
 Event::~Event()

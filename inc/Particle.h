@@ -21,6 +21,7 @@ public:
 	inline UInt_t GetPid() const { return fPid;}
 	inline Int_t GetPDGpid() const { return fPDGpid;}
 	inline Short_t GetCharge() const { return fCharge;}
+	inline Bool_t isPositive() const { return (fCharge <= 0 ? false : true);}
 	inline Float_t GetPx() const { return fPx;}
 	inline Float_t GetPy() const { return fPy;}
 	inline Float_t GetPz() const { return fPz;}
