@@ -9,7 +9,6 @@ class Event : public TObject
 	UInt_t fEid;			//Event number
 	TClonesArray* fParticles;	//Array of particles
 	UInt_t fNpa;
-	UInt_t fNneu;
 	UInt_t fNneg;
 	UInt_t fNpos;
 	UInt_t fNneu;
