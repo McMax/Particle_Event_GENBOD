@@ -53,6 +53,16 @@ void ParticleTree::AddParticle(UInt_t pid, Int_t pdgpid, Short_t charge, Float_t
 	event->AddParticle(pid, pdgpid, charge, px, py, pz, mass);
 }
 
+void ParticleTree::AddParticle(Particle& source_particle)
+{
+	event->AddParticle(source_particle,++part_id);
+}
+
+void ParticleTree::AddParticle(Particle& source_particle, UInt_t pid)
+{
+	event->AddParticle(source_particle,pid);
+}
+
 void ParticleTree::Close()
 {
 	tree->AutoSave("overwrite");

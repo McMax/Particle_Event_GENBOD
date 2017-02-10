@@ -51,13 +51,26 @@ void Event::AddParticle(UInt_t pid, Int_t pdgpid, Short_t charge, Float_t px, Fl
 		fNneu++;
 }
 
-void Event::AddParticle(const Particle& particle)
+void Event::AddParticle(Particle& source_particle)
 {
-	new ((*fParticles) [fNpa]) Particle(particle);
+	new ((*fParticles) [fNpa]) Particle(source_particle);
 	fNpa++;
+	(source_particle.GetCharge() < 0) ? (fNneg++) : (fNpos++);
+	if(source_particle.GetCharge() != 0)
+		if(source_particle.GetCharge() < 0)
+			fNneg++;
+		else
+			fNpos++;
+	else
+		fNneu++;
+}
 
-	if(particle.GetCharge() != 0)
-		if(particle.GetCharge() < 0)
+void Event::AddParticle(Particle& source_particle, UInt_t pid)
+{
+	new ((*fParticles) [fNpa]) Particle(source_particle, pid);
+	fNpa++;
+	if(source_particle.GetCharge() != 0)
+		if(source_particle.GetCharge() < 0)
 			fNneg++;
 		else
 			fNpos++;

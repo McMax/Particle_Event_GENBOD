@@ -16,6 +16,8 @@ class Particle : public TObject
 public:
 	Particle();
 	Particle(UInt_t, Int_t, Short_t, Float_t, Float_t, Float_t, Float_t);
+	Particle(Particle&);
+	Particle(Particle&, UInt_t);
 	virtual ~Particle();
 
 	inline UInt_t GetPid() const { return fPid;}

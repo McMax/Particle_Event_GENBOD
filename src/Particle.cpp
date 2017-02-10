@@ -25,6 +25,32 @@ Particle::Particle(UInt_t pid, Int_t pdgpid, Short_t charge,
 	fMass = mass;
 }
 
+Particle::Particle(Particle& source_particle)
+{
+	fPid = source_particle.fPid;
+	fPDGpid = source_particle.fPDGpid;
+	fCharge = source_particle.fCharge;
+
+	fPx = source_particle.fPx;
+	fPy = source_particle.fPy;
+	fPz = source_particle.fPz;
+
+	fMass = source_particle.fMass;
+}
+
+Particle::Particle(Particle& source_particle, UInt_t pid)
+{
+	fPid = pid;
+	fCharge = source_particle.fCharge;
+
+	fPx = source_particle.fPx;
+	fPy = source_particle.fPy;
+	fPz = source_particle.fPz;
+
+	fMass = source_particle.fMass;
+}
+
+
 Particle::~Particle()
 {
 

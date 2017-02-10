@@ -27,6 +27,8 @@ public:
 	UInt_t Check();
 	void AddParticle(Int_t, Short_t, Float_t, Float_t, Float_t, Float_t); //PDGpid, charge, px, py, pz, mass
 	void AddParticle(UInt_t, Int_t, Short_t, Float_t, Float_t, Float_t, Float_t); //pid, PDGpid, charge, px, py, pz, mass
+	void AddParticle(Particle&);
+	void AddParticle(Particle&, UInt_t);
 	void Close();
 	virtual ~ParticleTree();
 };
